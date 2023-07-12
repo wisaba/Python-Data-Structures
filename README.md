@@ -1,2 +1,2 @@
 # Python-Data-Structures
-Here is the data structures of the Python.
+Here is the data structures of the Python language.

@@ -1,0 +1,92 @@
+#here is some problems which can be solved by using arrays
+
+
+
+#this method checks if a word or phrase is a palindrom (means it equals with it's reversed form) or not. like madam
+def Check_Palindrom(str):
+    reversed_string = Reverse(str)
+    if reversed_string==str:
+        return True
+    else : return False
+
+    string = "madam"
+  print(Check_Palindrom(string))
+
+#reversing string
+def Reverse(data):
+
+    array = list(data)
+    start_index =0
+    end_index = len(array) - 1
+
+    while end_index>start_index:
+        array[start_index] , array[end_index] = array[end_index] , array[start_index]
+        start_index = start_index+1
+        end_index = end_index-1
+
+    return ''.join(array)
+
+#reversing an integer
+def Reverse_integer(num):
+    k = 0
+    while(num>0):
+        remain = num%10
+        num = num//10
+        k=k*10+remain
+    return k
+
+    print(Reverse_integer(28))
+
+#this method checks if a word is anagram of an original word or not .Like refusal & fluster
+def Anagram(first,second):
+
+    str = list(first)
+    str2 = list(second)
+    for i in str:
+        flag = False
+        for j in str2:
+
+            if i==j:
+                flag = True
+
+    if(flag):
+        print("The word "+ "\'"+ first +"\' "+"is an Anagram of the word "+ "\'"+ second +"\'")
+    else:print("This word isn\'t the anagram of "+second)
+
+
+
+#Here is the Dutch national problem in which we are supposed to think of an algorithm which sorts
+# a one dimentional array whithout using any extra memoryand also in linear time
+def sort(nums,mid=1):
+    i = 0
+    j = 0
+    k = len(nums) - 1
+
+    while j <= k:
+        # current element is 0
+        if nums[j] < mid:
+            swap(nums, i, j)
+            i = i + 1
+            j = j + 1
+        # current element is 2
+        elif nums[j] > mid:
+            swap(nums, j, k)
+            k = k - 1
+        # current element is 1
+        else:
+            j = j + 1
+
+    return nums
+
+
+def swap(nums, index1, index2):
+    nums[index1], nums[index2] = nums[index2], nums[index1]
+
+
+print(sort([0,2,2,1,0,0]))
+
+  
+
+  
+  
+  

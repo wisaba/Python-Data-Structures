@@ -1,0 +1,35 @@
+numbers = ['1','2','3','4','5']
+print(numbers[1:])
+numbers.append('6')
+numbers.insert(0,1)
+#numbers.clear()
+#numbers.remove(0,1)
+print(1 in numbers)
+print(len(numbers))
+print(numbers)
+for item in numbers:
+    print(item)
+
+
+i = 1
+while i<len(numbers):
+    print(numbers[i])
+    i = i+1
+
+
+# range : it defines integer numbers between two numbers by including the first number and excluding the last
+n = range(5,10 , 2)# here 2 means the distance between two numbers
+for item in n:
+    print(item)
+
+#OR
+for item in range(5,10,2):
+    print(item)
+
+#tuples : tuples are similar to lists as they are used to store a number of sequences ,but they cannot modified or changed ,instead they
+#just can be created.We usually use lists , but in some cases we don't want our sequence become changed so in this case we use tuples
+# so we don't have mehods like append or insert or remove in tuples , but we have some magical methods like __add__
+
+figures = (1,2,3,4,5)
+print(figures.count(3))
+print(figures.index(1))

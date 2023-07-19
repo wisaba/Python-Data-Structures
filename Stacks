@@ -1,0 +1,40 @@
+class Stack:
+    def __init__(self):
+        #implementing stack with one dimentional array
+        self.stack = []
+
+    def is_empty(self):
+        return self.stack == []
+
+    def push(self,data):
+        self.stack.append(data)
+
+    def pop(self):
+
+        if self.__sizeof__()==0:
+            return None
+
+        data = self.stack[-1]
+        del self.stack[-1]
+        return data
+
+
+    def peek(self):
+        return self.stack[-1]
+
+    def __sizeof__(self):
+        size_of_stack = len(self.stack)
+        return size_of_stack
+
+if __name__ == '__main__':
+    stack = Stack()
+    stack.push(1)
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.push(5)
+    stack.push(8)
+    stack.pop()
+    print(stack.peek())
+    print(stack.pop())
+

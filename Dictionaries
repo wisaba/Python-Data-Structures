@@ -1,0 +1,27 @@
+d = {'name':'Kevin','age':60,'gender':'male'}
+print(d['name'])
+#Kevin
+print(d.items())
+#dict_items([('name', 'Kevin'), ('age', 60), ('gender', 'male')])
+print(d.keys())
+#dict_keys(['name', 'age', 'gender'])
+print(d.values())
+#dict_values(['Kevin', 60, 'male'])
+for key,values in d.items():
+    print(key)
+#name
+#age
+#gender
+
+for key,values in d.items():
+    print(values)
+#Kevin
+#60
+#male
+
+d.clear()#clears items
+print(d)
+#{}
+del d #deletes hole the dictionary
+print(d)
+#NameError: name 'd' is not defined

@@ -1,0 +1,42 @@
+class HashTable:
+
+    def __init__(self):
+        self.capacity = 10
+        self.keys = [None]*self.capacity
+        self.value = [None]*self.capacity
+
+
+    def insert(self,key,data):
+        index = self.hash_function(key)
+        while self.keys is not None:
+            #sometimes we have to update the value which is already exist with the same key
+            if self.keys==key:
+                self.value =data
+                return
+
+            index = (index+1) % self.capacity
+
+    def get(self,key):
+        index = self.hash_function(key)
+        while self.keys[index] is not None:
+            if self.keys[index]==key:
+                return self.values[index]
+
+            index = (index + 1) % self.capacity
+        return None
+
+
+    def hash_function(self, key):
+        hash_sum = 0
+        for letter in key:
+            hash_sum = hash_sum + ord(letter)
+        return hash_sum % self.capacity
+
+
+if __name__ == '__main__':
+    hash= HashTable()
+    hash.insert('Adam',12)
+    hash.insert('Kevin',20)
+    hash.insert('Maggy',10)
+
+    print(hash.get('Adam'))

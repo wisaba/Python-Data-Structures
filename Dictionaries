@@ -19,6 +19,15 @@ for key,values in d.items():
 #60
 #male
 
+#list of dict:
+l = [
+    {'name':'Kevin','age':60,'gender':'male'},
+    {'name':'Maggy','age':30,'gender':'Female'}
+
+]
+print(l[1]['name'])
+#Maggy
+
 d.clear()#clears items
 print(d)
 #{}
